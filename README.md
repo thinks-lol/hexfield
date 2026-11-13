@@ -194,10 +194,18 @@ into `index.html` was removed so the page is self-contained.
 ## Hosting
 
 It is a static site with no build step, so anywhere that serves files over HTTPS
-works — GitHub Pages, Cloudflare Pages, Netlify, or a plain bucket. Two
-requirements: serve the directory root as the site root (every path in
-`index.html` is relative: `./app.js`, `./icon.svg`), and serve `.js` as
-JavaScript and `.webmanifest` as `application/manifest+json`.
+works — GitHub Pages, Cloudflare Pages, Netlify, or a plain bucket. Three
+requirements:
+
+- **Serve it at a domain root or a subpath.** Every URL in `index.html` is
+  relative (`./app.js`, `./icon.svg`, `./midi-worklet.js`), so both
+  `https://example.com/` and `https://example.com/hexfield/` work. Both layouts
+  have been tested.
+- **Correct MIME types** for `.js` (`text/javascript`) and `.webmanifest`
+  (`application/manifest+json`). GitHub Pages and Cloudflare Pages do this
+  already.
+- **HTTPS**, because Web MIDI, AudioWorklet, `setSinkId` and device selection all
+  require a secure context. Plain HTTP still loads the internal synth.
 
 ## Licence
 
