@@ -6,6 +6,8 @@ A hexagonal, microtonal instrument that runs entirely in the browser. One HTML
 page, a canvas, and a few ES modules. No build step, no dependencies, no network
 requests after load.
 
+**Play it at <https://thinks.lol/hexfield/>.**
+
 ![Hexfield playing a three-voice chord on a Wicki–Hayden layout](docs/hexfield.png)
 
 The same key shape gives you the same intervals in every tuning: the keyboard
@@ -192,6 +194,12 @@ verbatim, with one change: the Cloudflare challenge script that the edge injects
 into `index.html` was removed so the page is self-contained.
 
 ## Hosting
+
+Live at **<https://thinks.lol/hexfield/>**, published from the
+[thinks.lol](https://github.com/thinks-lol/thinks.lol) Hugo site. That site
+carries this repository as a submodule and copies the nine runtime files into
+its build output at `/hexfield/`; tests, docs and repo metadata are not
+published. Updating the live instrument is a submodule bump in that repo.
 
 It is a static site with no build step, so anywhere that serves files over HTTPS
 works — GitHub Pages, Cloudflare Pages, Netlify, or a plain bucket. Three
