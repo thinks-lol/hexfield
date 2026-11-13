@@ -1,0 +1,21 @@
+{
+  "name": "hexfield",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A hexagonal, microtonal instrument for the browser",
+  "type": "module",
+  "homepage": "https://hexfield-garrison.transparentcorgi2.chatgpt.site",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "test": "node --test test/*.test.mjs"
+  },
+  "keywords": [
+    "microtonal",
+    "midi",
+    "mpe",
+    "wicki-hayden",
+    "isomorphic-keyboard",
+    "web-audio",
+    "edo"
+  ]
+}
